@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タスク管理ボード</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">タスク管理ボード</h1>
+    <button class="btn btn-primary" id="add-column-btn">+ カラム追加</button>
+  </header>
+
+  <main class="board" id="board"></main>
+
+  <!-- カード詳細モーダル -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">カード詳細</h2>
+        <button class="modal-close" id="modal-close">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="modal-card-title">タイトル</label>
+          <input type="text" id="modal-card-title" class="form-input" placeholder="タスクのタイトル">
+        </div>
+        <div class="form-group">
+          <label for="modal-card-desc">説明</label>
+          <textarea id="modal-card-desc" class="form-textarea" rows="4" placeholder="詳細説明（任意）"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-card-due">期限日</label>
+            <input type="date" id="modal-card-due" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="modal-card-priority">優先度</label>
+            <select id="modal-card-priority" class="form-select">
+              <option value="high">高</option>
+              <option value="medium" selected>中</option>
+              <option value="low">低</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="modal-save">保存</button>
+        <button class="btn btn-secondary" id="modal-cancel">キャンセル</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
