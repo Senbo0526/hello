@@ -1,0 +1,22 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+      - org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration
+
+server:
+  port: 8080
+
+# DB を用意したら上記 exclude をすべて削除し、以下のコメントを外す
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/trello_db
+#    username: postgres
+#    password: postgres
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#    show-sql: true
+#  flyway:
+#    enabled: true
